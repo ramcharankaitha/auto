@@ -703,24 +703,6 @@
       opacity: 0.4;
     }
 
-    .product-image[data-product="storage"]::before {
-      content: '📦';
-      font-size: 4rem;
-      opacity: 0.4;
-    }
-
-    .product-image[data-product="home"]::before {
-      content: '🏠';
-      font-size: 4rem;
-      opacity: 0.4;
-    }
-
-    .product-image[data-product="gifts"]::before {
-      content: '🎁';
-      font-size: 4rem;
-      opacity: 0.4;
-    }
-
     .product-image[data-product="tools"]::before {
       content: '🔪';
       font-size: 4rem;
@@ -2020,103 +2002,36 @@
   <section class="section" id="products">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <div class="section-subtitle">Our Categories</div>
-        <h2 class="section-title">Complete Home & Kitchen Solutions</h2>
+        <div class="section-subtitle">Our Brands</div>
+        <h2 class="section-title">Shop by Brand</h2>
         <p class="section-description">
-          Explore our wide range of products designed for modern homes and kitchens
+          Explore products from your favorite brands - Panasonic, Preethi, and more
         </p>
       </div>
       
-      <div class="products-grid">
-        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="product-image" data-product="cooker"></div>
-          <div class="product-content">
-            <h3 class="product-title">Pressure Cookers</h3>
-            <p class="product-description">
-              Premium quality pressure cookers - stainless steel, aluminum, and outer lid varieties
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
-    </div>
+      <!-- Brands Grid - Will be populated dynamically -->
+      <div class="products-grid" id="brandsGrid">
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+          <div class="loader-icon" style="width: 60px; height: 60px; margin: 0 auto 1rem;">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+          <p style="color: var(--muted-text);">Loading brands...</p>
         </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-image" data-product="electric"></div>
-          <div class="product-content">
-            <h3 class="product-title">Electric Appliances</h3>
-            <p class="product-description">
-              Mixers, grinders, rice cookers, induction stoves, and all home electric items
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
+      </div>
+      
+      <!-- Product Listing Section (Hidden by default) -->
+      <div id="productListingSection" style="display: none; margin-top: 4rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem; padding: 1.5rem; background: var(--bg-primary); border-radius: 15px; box-shadow: var(--shadow-md);">
+          <div>
+            <button id="backToBrandsBtn" class="btn-secondary" style="background: transparent; color: var(--primary-color); border-color: var(--primary-color); margin-bottom: 1rem;">
+              <i class="fas fa-arrow-left"></i> Back to Brands
+            </button>
+            <h2 id="selectedBrandTitle" style="font-size: 2.5rem; color: var(--heading-color); margin: 0;"></h2>
+            <p id="selectedBrandCount" style="color: var(--muted-text); margin-top: 0.5rem;"></p>
           </div>
         </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="product-image" data-product="cookware"></div>
-          <div class="product-content">
-            <h3 class="product-title">Cookware & Utensils</h3>
-            <p class="product-description">
-              Non-stick pans, kadais, tawas, and complete stainless steel cookware sets
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="product-image" data-product="storage"></div>
-          <div class="product-content">
-            <h3 class="product-title">Storage Containers</h3>
-            <p class="product-description">
-              Airtight containers, lunch boxes, water bottles, and kitchen storage solutions
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-image" data-product="home"></div>
-          <div class="product-content">
-            <h3 class="product-title">Home Essentials</h3>
-            <p class="product-description">
-              Household items, cleaning tools, organizers, and daily use products
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="product-image" data-product="gifts"></div>
-          <div class="product-content">
-            <h3 class="product-title">Gift Items</h3>
-            <p class="product-description">
-              Premium gift sets, decorative items, and special occasion products
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="product-image" data-product="tools"></div>
-          <div class="product-content">
-            <h3 class="product-title">Kitchen Tools</h3>
-            <p class="product-description">
-              Knives, peelers, choppers, and all essential kitchen accessories
-            </p>
-            <a href="#" class="product-link">
-              Shop Now <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
+        <div class="products-grid" id="productListingGrid">
+          <!-- Products will be populated here -->
         </div>
       </div>
     </div>
@@ -2684,22 +2599,21 @@
     (function() {
       'use strict';
     
-      // ⚠️ STEP 1: Replace this with your actual API server URL
+      // API URL
       const API_URL = 'https://anitha-stores-backend.onrender.com/api/products/public';
     
-      // Category mapping: Website categories -> Product categories in database
-      const CATEGORY_MAPPING = {
-        'Pressure Cookers': ['Pressure Cooker', 'Cooker', 'Pressure'],
-        'Electric Appliances': ['Electric', 'Mixer', 'Grinder', 'Rice Cooker', 'Induction', 'Appliance'],
-        'Cookware & Utensils': ['Cookware', 'Utensil', 'Non-stick', 'Kadai', 'Tawa', 'Pan', 'Cookware Set'],
-        'Storage Containers': ['Container', 'Storage', 'Lunch Box', 'Water Bottle', 'Airtight'],
-        'Home Essentials': ['Home', 'Essential', 'Household', 'Cleaning', 'Organizer'],
-        'Gift Items': ['Gift', 'Gift Set', 'Decorative'],
-        'Kitchen Tools': ['Tool', 'Knife', 'Peeler', 'Chopper', 'Kitchen Accessory', 'Accessory']
-      };
-    
       let allProducts = [];
+      let brands = [];
+      let currentBrand = null;
       let isLoading = false;
+    
+      // DOM Elements
+      const brandsGrid = document.getElementById('brandsGrid');
+      const productListingSection = document.getElementById('productListingSection');
+      const productListingGrid = document.getElementById('productListingGrid');
+      const selectedBrandTitle = document.getElementById('selectedBrandTitle');
+      const selectedBrandCount = document.getElementById('selectedBrandCount');
+      const backToBrandsBtn = document.getElementById('backToBrandsBtn');
     
       /**
        * Fetch products from API
@@ -2717,75 +2631,166 @@
           const data = await response.json();
           if (data.success && data.products) {
             allProducts = data.products;
-            displayProductsByCategory();
+            extractBrands();
+            displayBrands();
           } else {
-            console.error('Failed to fetch products:', data);
+            showError('Failed to load products. Please try again later.');
           }
         } catch (error) {
           console.error('Error fetching products:', error);
-          // Don't show error to users, just log it
+          showError('Unable to connect to server. Please check your connection.');
         } finally {
           isLoading = false;
         }
       }
     
       /**
-       * Match product category to website category
+       * Extract unique brands from products
+       * Checks multiple possible field names: brand, manufacturer, company, main_category, etc.
        */
-      function matchCategory(productCategory) {
-        if (!productCategory) return null;
-        const categoryLower = productCategory.toLowerCase();
+      function extractBrands() {
+        const brandSet = new Set();
+        const brandProductCount = {};
         
-        for (const [websiteCategory, keywords] of Object.entries(CATEGORY_MAPPING)) {
-          for (const keyword of keywords) {
-            if (categoryLower.includes(keyword.toLowerCase())) {
-              return websiteCategory;
-            }
-          }
-        }
-        return null;
-      }
-    
-      /**
-       * Group products by website categories
-       */
-      function groupProductsByCategory() {
-        const grouped = {};
-        
-        // Initialize all categories
-        Object.keys(CATEGORY_MAPPING).forEach(category => {
-          grouped[category] = [];
-        });
-        
-        // Group products
         allProducts.forEach(product => {
-          const matchedCategory = matchCategory(product.category);
-          if (matchedCategory) {
-            grouped[matchedCategory].push(product);
+          // Try different possible field names for brand
+          const brandName = product.brand || 
+                           product.manufacturer || 
+                           product.company || 
+                           product.main_category ||
+                           product.brand_name ||
+                           product.category ||
+                           'Other';
+          
+          if (brandName && brandName.trim() !== '') {
+            const normalizedBrand = brandName.trim();
+            brandSet.add(normalizedBrand);
+            brandProductCount[normalizedBrand] = (brandProductCount[normalizedBrand] || 0) + 1;
           }
         });
         
-        return grouped;
+        // Convert to array and sort by product count (descending)
+        brands = Array.from(brandSet).map(brand => ({
+          name: brand,
+          productCount: brandProductCount[brand]
+        })).sort((a, b) => b.productCount - a.productCount);
+        
+        console.log('Extracted brands:', brands);
       }
     
       /**
-       * Create product card HTML matching your website's style
+       * Display brands as cards
        */
-      function createProductCard(product) {
+      function displayBrands() {
+        if (!brandsGrid) return;
+        
+        if (brands.length === 0) {
+          brandsGrid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+              <p style="color: var(--muted-text);">No brands found.</p>
+            </div>
+          `;
+          return;
+        }
+        
+        brandsGrid.innerHTML = brands.map((brand, index) => `
+          <div class="product-card" data-aos="fade-up" data-aos-delay="${index * 100}" data-brand="${escapeHtml(brand.name)}" style="cursor: pointer;">
+            <div class="product-image" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); display: flex; align-items: center; justify-content: center;">
+              <div style="font-size: 4rem; opacity: 0.3; color: #ffffff;">
+                🏷️
+              </div>
+            </div>
+            <div class="product-content">
+              <h3 class="product-title">${escapeHtml(brand.name)}</h3>
+              <p class="product-description">
+                ${brand.productCount} ${brand.productCount === 1 ? 'product' : 'products'} available
+              </p>
+              <a href="#" class="product-link" onclick="event.preventDefault(); showBrandProducts('${escapeHtml(brand.name)}'); return false;">
+                View Products <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        `).join('');
+        
+        // Add click handlers to entire cards
+        brandsGrid.querySelectorAll('.product-card[data-brand]').forEach(card => {
+          card.addEventListener('click', function(e) {
+            if (!e.target.closest('.product-link')) {
+              const brandName = this.getAttribute('data-brand');
+              showBrandProducts(brandName);
+            }
+          });
+        });
+      }
+    
+      /**
+       * Show products for a specific brand
+       */
+      function showBrandProducts(brandName) {
+        currentBrand = brandName;
+        
+        // Filter products by brand
+        const brandProducts = allProducts.filter(product => {
+          const productBrand = product.brand || 
+                              product.manufacturer || 
+                              product.company || 
+                              product.main_category ||
+                              product.brand_name ||
+                              product.category ||
+                              'Other';
+          return productBrand.trim() === brandName;
+        });
+        
+        // Update UI
+        selectedBrandTitle.textContent = brandName;
+        selectedBrandCount.textContent = `${brandProducts.length} ${brandProducts.length === 1 ? 'product' : 'products'} found`;
+        
+        // Display products
+        displayProducts(brandProducts);
+        
+        // Show product listing section, hide brands grid
+        productListingSection.style.display = 'block';
+        brandsGrid.style.display = 'none';
+        
+        // Scroll to top of products section
+        document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    
+      /**
+       * Display products in grid
+       */
+      function displayProducts(products) {
+        if (!productListingGrid) return;
+        
+        if (products.length === 0) {
+          productListingGrid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+              <p style="color: var(--muted-text);">No products found for this brand.</p>
+            </div>
+          `;
+          return;
+        }
+        
+        productListingGrid.innerHTML = products.map((product, index) => createProductCard(product, index)).join('');
+      }
+    
+      /**
+       * Create product card HTML
+       */
+      function createProductCard(product, index) {
         const imageUrl = product.image_url || '';
         const discount = product.discount > 0 ? 
           `<span style="display:block;color:#28a745;font-size:0.9em;margin-bottom:8px;font-weight:600;">Save ₹${formatPrice(product.discount)}</span>` : '';
         const mrp = product.mrp ? 
           `<span style="display:block;text-decoration:line-through;color:#999;font-size:0.85em;margin-bottom:5px;">MRP: ₹${formatPrice(product.mrp)}</span>` : '';
         
-        // Use product image if available, otherwise use placeholder
         const imageHtml = imageUrl ? 
           `<img src="${imageUrl}" alt="${escapeHtml(product.product_name)}" 
                 style="width:100%;height:100%;object-fit:cover;"
                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />` : '';
         
         return `
-          <div class="product-card" data-aos="fade-up" style="background: var(--bg-primary); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; position: relative; border: 1px solid rgba(0, 0, 0, 0.05);">
+          <div class="product-card" data-aos="fade-up" data-aos-delay="${index * 50}" style="background: var(--bg-primary); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; position: relative; border: 1px solid rgba(0, 0, 0, 0.05);">
             <div class="product-image" style="width: 100%; height: 280px; position: relative; overflow: hidden; background: ${imageUrl ? 'url(' + imageUrl + ')' : 'rgba(211, 47, 47, 0.05)'}; background-size: cover; background-position: center;">
               ${imageHtml}
               <div style="display: ${imageUrl ? 'none' : 'flex'}; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 4rem; opacity: 0.4;">
@@ -2813,90 +2818,30 @@
       }
     
       /**
-       * Display products in their respective category sections
+       * Show error message
        */
-      function displayProductsByCategory() {
-        const grouped = groupProductsByCategory();
-        
-        Object.keys(grouped).forEach(category => {
-          const products = grouped[category];
-          if (products.length === 0) return;
-          
-          // Find the category card on the page
-          const categoryCard = findCategoryCard(category);
-          if (!categoryCard) {
-            console.warn(`Category card not found for: ${category}`);
-            return;
-          }
-          
-          // Find the product-content div inside the card
-          const productContent = categoryCard.querySelector('.product-content');
-          if (!productContent) return;
-          
-          // Create products container after the description
-          let productsContainer = categoryCard.querySelector('.products-list-container');
-          if (!productsContainer) {
-            productsContainer = document.createElement('div');
-            productsContainer.className = 'products-list-container';
-            productsContainer.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 2px solid rgba(211, 47, 47, 0.1);';
-            productContent.appendChild(productsContainer);
-          }
-          
-          // Clear and add products (limit to 6 per category)
-          productsContainer.innerHTML = '';
-          const displayProducts = products.slice(0, 6);
-          displayProducts.forEach(product => {
-            productsContainer.innerHTML += createProductCard(product);
-          });
-          
-          // Add "View All" button if there are more products
-          if (products.length > 6) {
-            const viewAllBtn = document.createElement('button');
-            viewAllBtn.textContent = `View All ${products.length} Products`;
-            viewAllBtn.className = 'btn-primary';
-            viewAllBtn.style.cssText = 'margin-top: 1.5rem; width: 100%; grid-column: 1 / -1;';
-            viewAllBtn.onclick = () => {
-              // You can implement a modal or expand functionality here
-              alert(`Showing all ${products.length} products for ${category}`);
-            };
-            productsContainer.appendChild(viewAllBtn);
-          }
-        });
+      function showError(message) {
+        if (brandsGrid) {
+          brandsGrid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+              <i class="fas fa-exclamation-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+              <p style="color: var(--muted-text);">${message}</p>
+              <button class="btn-primary" onclick="location.reload()" style="margin-top: 1rem;">
+                <i class="fas fa-redo"></i> Retry
+              </button>
+            </div>
+          `;
+        }
       }
     
       /**
-       * Find category card on the page
+       * Back to brands view
        */
-      function findCategoryCard(category) {
-        // Map category names to data-product attributes
-        const categoryMap = {
-          'Pressure Cookers': 'cooker',
-          'Electric Appliances': 'electric',
-          'Cookware & Utensils': 'cookware',
-          'Storage Containers': 'storage',
-          'Home Essentials': 'home',
-          'Gift Items': 'gifts',
-          'Kitchen Tools': 'tools'
-        };
-        
-        const dataProduct = categoryMap[category];
-        if (dataProduct) {
-          // Find card by data-product attribute
-          const card = document.querySelector(`.product-card .product-image[data-product="${dataProduct}"]`);
-          if (card) {
-            return card.closest('.product-card');
-          }
-        }
-        
-        // Fallback: Find by heading text
-        const headings = document.querySelectorAll('.product-title');
-        for (const heading of headings) {
-          if (heading.textContent.includes(category)) {
-            return heading.closest('.product-card');
-          }
-        }
-        
-        return null;
+      function backToBrands() {
+        productListingSection.style.display = 'none';
+        brandsGrid.style.display = 'grid';
+        currentBrand = null;
+        document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     
       /**
@@ -2915,12 +2860,21 @@
       }
     
       /**
-       * Initialize when DOM is ready
+       * Initialize
        */
       function init() {
+        // Back button handler
+        if (backToBrandsBtn) {
+          backToBrandsBtn.addEventListener('click', backToBrands);
+        }
+        
+        // Make functions globally available
+        window.showBrandProducts = showBrandProducts;
+        window.backToBrands = backToBrands;
+        
+        // Fetch products when DOM is ready
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', () => {
-            // Wait a bit for AOS to initialize
             setTimeout(fetchProducts, 500);
           });
         } else {
@@ -2931,6 +2885,6 @@
       // Start initialization
       init();
     })();
-    </script>
+  </script>
 </body>
 </html>
