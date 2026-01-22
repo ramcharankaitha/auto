@@ -2804,24 +2804,24 @@
         
         return `
           <div class="product-card" data-aos="fade-up" data-aos-delay="${index * 50}" style="background: var(--bg-primary); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; position: relative; border: 1px solid rgba(0, 0, 0, 0.05);">
-            <div class="product-image" style="width: 100%; height: 280px; position: relative; overflow: hidden; background: ${imageUrl ? 'url(' + imageUrl + ')' : 'rgba(211, 47, 47, 0.05)'}; background-size: cover; background-position: center;">
+            <div class="product-image" style="width: 100%; height: 180px; position: relative; overflow: hidden; background: ${imageUrl ? 'url(' + imageUrl + ')' : 'rgba(211, 47, 47, 0.05)'}; background-size: cover; background-position: center;">
               ${imageHtml}
-              <div style="display: ${imageUrl ? 'none' : 'flex'}; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 4rem; opacity: 0.4;">
+              <div style="display: ${imageUrl ? 'none' : 'flex'}; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 2.5rem; opacity: 0.4;">
                 🏪
               </div>
             </div>
-            <div class="product-content" style="padding: 2.5rem; position: relative; z-index: 1; text-align: left;">
-              <h3 class="product-title" style="font-size: 1.6rem; font-weight: 700; color: var(--heading-color); margin-bottom: 1rem;">
+            <div class="product-content" style="padding: 1.5rem; position: relative; z-index: 1; text-align: left;">
+              <h3 class="product-title" style="font-size: 1.2rem; font-weight: 700; color: var(--heading-color); margin-bottom: 0.8rem; line-height: 1.3;">
                 ${escapeHtml(product.product_name)}
               </h3>
-              ${product.category ? `<p style="color: var(--muted-text); font-size: 0.9em; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">${escapeHtml(product.category)}</p>` : ''}
-              <div style="margin: 1.5rem 0; padding-top: 1.5rem; border-top: 1px solid #eee;">
+              ${product.category ? `<p style="color: var(--muted-text); font-size: 0.85em; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">${escapeHtml(product.category)}</p>` : ''}
+              <div style="margin: 1rem 0; padding-top: 1rem; border-top: 1px solid #eee;">
                 ${mrp}
                 ${discount}
-                <span style="font-size: 1.8em; font-weight: bold; color: var(--primary-color); display: block; margin-top: 8px;">₹${formatPrice(product.sell_rate)}</span>
+                <span style="font-size: 1.4em; font-weight: bold; color: var(--primary-color); display: block; margin-top: 6px;">₹${formatPrice(product.sell_rate)}</span>
               </div>
-              <div style="margin-top: 1rem;">
-                <span style="padding: 6px 12px; border-radius: 6px; font-size: 0.85em; font-weight: 600; display: inline-block; background-color: ${product.current_quantity > 0 ? '#e8f5e9' : '#ffebee'}; color: ${product.current_quantity > 0 ? '#2e7d32' : '#c62828'};">
+              <div style="margin-top: 0.8rem;">
+                <span style="padding: 5px 10px; border-radius: 6px; font-size: 0.8em; font-weight: 600; display: inline-block; background-color: ${product.current_quantity > 0 ? '#e8f5e9' : '#ffebee'}; color: ${product.current_quantity > 0 ? '#2e7d32' : '#c62828'};">
                   ${product.current_quantity > 0 ? `${product.current_quantity} in stock` : 'Out of stock'}
                 </span>
               </div>
